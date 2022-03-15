@@ -1,0 +1,33 @@
+server:
+  port: ${SERVER_PORT:8501}
+
+  boot:
+    admin:
+      client:
+        url: ${SPRING_BOOT_ADMIN_SERVER_URL:http://localhost:8508}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+spring:
+  application:
+    name: AUTH-SERVICE
+  datasource:
+    url: ${MYSQL_URL:jdbc:mysql://localhost:3306/borealis}
+    username: ${MYSQL_URL:root}
+    password: ${MYSQL_URL:borealis}
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    instance:
+      hostname: ${EUREKA_SERVER_HOSTNAME:localhost}
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8500/eureka/}
