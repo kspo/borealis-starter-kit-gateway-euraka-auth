@@ -31,7 +31,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public ResponseEntity<UserDto> register(@RequestBody UserDto userDto) {
+    public ResponseEntity<UserDto> register(@ModelAttribute UserDto userDto) {
         log.info("kayıt dto: {}", userDto);
         return ResponseEntity.ok().body(userService.saveUser(userDto));
     }
