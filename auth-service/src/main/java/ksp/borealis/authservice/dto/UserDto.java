@@ -1,5 +1,7 @@
 package ksp.borealis.authservice.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import ksp.borealis.authservice.entity.Role;
 import lombok.Data;
 
@@ -8,6 +10,7 @@ import java.util.Collection;
 import java.util.Date;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserDto {
 
     private Long id;

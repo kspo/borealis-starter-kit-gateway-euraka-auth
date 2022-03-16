@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -53,6 +54,9 @@ public class User implements Serializable {
 
     @Column(name = "nationality")
     private String nationality;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<Role> role;
 
 }
 

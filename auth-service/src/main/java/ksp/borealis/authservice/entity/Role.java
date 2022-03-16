@@ -38,5 +38,4 @@ public class Role implements Serializable {
 	@ManyToMany(fetch = FetchType.EAGER)
 	private Set<Privilege> privileges;
 
-
 }
